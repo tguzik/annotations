@@ -71,7 +71,7 @@
 				<version>2.7.1</version>
 				<configuration>
 					<parallel>classes</parallel>
-					<failIfNoTests>true</failIfNoTests>
+					<failIfNoTests>false</failIfNoTests>
 					<useUnlimitedThreads>true</useUnlimitedThreads>
 					<forkedProcessTimeoutInSeconds>60</forkedProcessTimeoutInSeconds>
 					<useFile>false</useFile>
