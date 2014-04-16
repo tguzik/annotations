@@ -1,4 +1,4 @@
-package com.tguzik.util.annotations;
+package com.tguzik.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

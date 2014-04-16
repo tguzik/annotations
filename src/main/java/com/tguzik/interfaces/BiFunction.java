@@ -1,4 +1,4 @@
-package com.tguzik.util.interfaces;
+package com.tguzik.interfaces;
 
 /**
  * Common interface for functions that take two arguments of types <em>F1</em>
