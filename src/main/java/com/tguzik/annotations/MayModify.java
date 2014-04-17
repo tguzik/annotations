@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
  */
 @Retention( RetentionPolicy.CLASS )
 @Target( value = ElementType.PARAMETER )
-public @interface Modified {
-
+public @interface MayModify {
+    String comment() default "";
 }
