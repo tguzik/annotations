@@ -22,12 +22,28 @@ public @interface ExpectedPerformanceProfile {
     String[] comment() default "";
 
     enum PerformanceCharacteristic {
+        /** Uses significant amount of CPU */
         CPU_HEAVY,
+
+        /** Uses significant amount of IO */
         IO_HEAVY,
+
+        /** Produces significant amount of garbage on heap */
+        GC_HEAVY,
+
+        /** Uses significant amount of memory */
         MEMORY_HEAVY,
+
+        /** Relies heavily on caching */
         CACHE_BOUND,
+
+        /** Relies heavily on reflection mechanisms */
         REFLECTION_HEAVY,
+
+        /** Returns very quickly and does not block */
         LOW_LATENCY,
+
+        /** Default value. Profile not known - see comment */
         UNKNOWN;
     }
 }

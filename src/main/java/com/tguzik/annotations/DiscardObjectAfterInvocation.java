@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
  * @since 0.1
  */
 @Documented
-@Target( ElementType.METHOD )
+@Target( {ElementType.METHOD, ElementType.PARAMETER} )
 @Retention( RetentionPolicy.CLASS )
 public @interface DiscardObjectAfterInvocation {
 

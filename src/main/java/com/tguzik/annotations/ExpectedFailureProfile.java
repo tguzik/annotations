@@ -16,15 +16,30 @@ import java.lang.annotation.Target;
 @Retention( RetentionPolicy.CLASS )
 @Target( {ElementType.TYPE, ElementType.METHOD} )
 public @interface ExpectedFailureProfile {
-    FailureMode value() default FailureMode.UNKNOWN;
+    /** How the annotated type/method handles failures? */
+    FailureMode value();
 
-    Transactional transactional() default Transactional.UNKNOWN;
+    /**
+     * Does the failure corrupt internal state? Can object be reused after
+     * failure?
+     */
+    Transactional transactional();
+
+    /** How many times does the type/method retry before giving up? */
+    int retries() default 0;
 
     enum FailureMode {
+        /** Reports failure as soon as it occurs */
         FAIL_FAST,
-        FAIL_LATE,
-        HIDES_FAILURES,
-        UNKNOWN
+
+        /** Reports failure but continues with processing */
+        CARRY_ON,
+
+        /** Completely hides failures */
+        IGNORE,
+
+        /** Automatically retries when failue occurs */
+        RETRY
     }
 
     enum Transactional {
