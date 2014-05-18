@@ -17,18 +17,18 @@ import java.lang.annotation.Target;
 @Target( {ElementType.TYPE, ElementType.METHOD} )
 public @interface ExpectedFailureProfile {
     /** How the annotated type/method handles failures? */
-    FailureMode value();
+    Kind value();
 
     /**
      * Does the failure corrupt internal state? Can object be reused after
      * failure?
      */
-    Transactional transactional();
+    Transactional transactional() default Transactional.UNKNOWN;
 
     /** How many times does the type/method retry before giving up? */
     int retries() default 0;
 
-    enum FailureMode {
+    enum Kind {
         /** Reports failure as soon as it occurs */
         FAIL_FAST,
 

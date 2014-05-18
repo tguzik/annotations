@@ -17,11 +17,11 @@ import java.lang.annotation.Target;
 @Retention( RetentionPolicy.CLASS )
 @Target( {ElementType.TYPE, ElementType.METHOD} )
 public @interface ExpectedPerformanceProfile {
-    PerformanceCharacteristic[] value() default PerformanceCharacteristic.UNKNOWN;
+    Kind[] value() default Kind.UNKNOWN;
 
     String[] comment() default "";
 
-    enum PerformanceCharacteristic {
+    enum Kind {
         /** Uses significant amount of CPU */
         CPU_HEAVY,
 

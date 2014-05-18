@@ -6,6 +6,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import javax.annotation.meta.When;
+
 /**
  * Indicates that the method/type/field has some side effects. Optional value
  * can be used as a comment to describe said effects.
@@ -23,4 +25,6 @@ import java.lang.annotation.Target;
 public @interface HasSideEffects {
     /** Optional comment describing side effects */
     String[] value();
+
+    When when() default When.UNKNOWN;
 }
