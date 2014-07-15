@@ -12,9 +12,12 @@
 	<artifactId>annotatons</artifactId>
 	<version>0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
+
 	<name>annotations</name>
-	<description>Collection of annotations and interfaces that attempt to make Java code more readable.</description>
 	<url>https://github.com/tguzik/annotations</url>
+	<description>
+	   Collection of annotations and interfaces that attempt to make Java code more readable.
+	</description>
 
 	<licenses>
 		<license>
@@ -23,6 +26,13 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com:tguzik/annotations.git</connection>
+		<developerConnection>scm:git:git@github.com:tguzik/annotations.git</developerConnection>
+		<url>git@github.com:tguzik/annotations.git</url>
+	</scm>
+
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/tguzik/annotations/issues</url>
@@ -31,11 +41,7 @@
 		<system>Travis CI</system>
 		<url>https://travis-ci.org/tguzik/annotations</url>
 	</ciManagement>
-	<scm>
-		<url>https://github.com/tguzik/annotations</url>
-		<developerConnection>scm:git:https://github.com/tguzik/annotations.git</developerConnection>
-		<connection>scm:git:https://github.com/tguzik/annotations.git</connection>
-	</scm>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,14 +55,6 @@
 		</developer>
 	</developers>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.google.code.findbugs</groupId>
-			<artifactId>jsr305</artifactId>
-			<version>[2.0.2,)</version>
-		</dependency>
-	</dependencies>
-
 	<profiles>
 		<profile>
 			<id>javadoc</id>
@@ -68,6 +66,14 @@
 			</build>
 		</profile>
 	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>[2.0.2,)</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<defaultGoal>package</defaultGoal>
