@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * Communicates the expected performance characteristic to the programmer using
  * the class.
- * 
+ *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */
@@ -17,9 +17,34 @@ import java.lang.annotation.Target;
 @Retention( RetentionPolicy.CLASS )
 @Target( {ElementType.TYPE, ElementType.METHOD} )
 public @interface ExpectedPerformanceProfile {
+    Path[] path() default Path.UNKNOWN;
+
     Kind[] value() default Kind.UNKNOWN;
 
     String[] comment() default "";
+
+    enum Path {
+        /**
+         * Annotated class or method resides on hot path: it is executed very
+         * often
+         */
+        HOT,
+
+        /**
+         * Annotated class or method resides on warm path: it is sometimes
+         * executed in hot path and sometimes in cold path
+         */
+        WARM,
+
+        /**
+         * Annotated class or method resides on cold path: it is executed
+         * infrequently.
+         */
+        COLD,
+
+        /** Default value. Path not known */
+        UNKNOWN;
+    }
 
     enum Kind {
         /** Uses significant amount of CPU */

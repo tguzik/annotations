@@ -11,7 +11,7 @@ import javax.annotation.meta.When;
 /**
  * Indicates that the method/type/field has some side effects. Optional value
  * can be used as a comment to describe said effects.
- * 
+ *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */
@@ -23,7 +23,7 @@ import javax.annotation.meta.When;
           ElementType.PARAMETER} )
 @Retention( RetentionPolicy.CLASS )
 public @interface HasSideEffects {
-    /** Optional comment describing side effects */
+    /** Comment describing side effects */
     String[] value();
 
     When when() default When.UNKNOWN;
