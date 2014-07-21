@@ -8,8 +8,9 @@ import java.lang.annotation.Target;
 
 /**
  * Parameter object annotated by this value will have its lifecycle managed by
- * invoked method.
- * 
+ * invoked method. An example of such transfer would be storing an object
+ * (parameter) in a cache.
+ *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */

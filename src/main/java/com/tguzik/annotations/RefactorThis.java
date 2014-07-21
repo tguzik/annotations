@@ -1,6 +1,5 @@
 package com.tguzik.annotations;
 
-import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -19,11 +18,10 @@ import java.lang.annotation.Target;
  * but in reality happens more than one would like. Especially with old
  * codebases.
  * </p>
- * 
+ *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */
-@Documented
 @Retention( RetentionPolicy.SOURCE )
 @Target( value = {ElementType.TYPE, ElementType.METHOD, ElementType.CONSTRUCTOR} )
 public @interface RefactorThis {

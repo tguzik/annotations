@@ -7,8 +7,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Attempts to communicate when user would know that failure happened.
- * 
+ * Communicates the failure mode of annotated class/method.
+ *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */
