@@ -1,12 +1,7 @@
 package com.tguzik.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import javax.annotation.meta.When;
+import java.lang.annotation.*;
 
 /**
  * Indicates that the method/type/field has some side effects. Optional value
@@ -16,12 +11,8 @@ import javax.annotation.meta.When;
  * @since 0.1
  */
 @Documented
-@Target( {ElementType.METHOD,
-          ElementType.CONSTRUCTOR,
-          ElementType.FIELD,
-          ElementType.TYPE,
-          ElementType.PARAMETER} )
-@Retention( RetentionPolicy.CLASS )
+@Target({ ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.TYPE, ElementType.PARAMETER })
+@Retention(RetentionPolicy.CLASS)
 public @interface HasSideEffects {
     /** Comment describing side effects */
     String[] value();

@@ -1,10 +1,6 @@
 package com.tguzik.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * <p>
@@ -22,13 +18,13 @@ import java.lang.annotation.Target;
  * reference will not be changed, but cannot guarantee that the object itself is
  * not changed (mutated).
  * </p>
- * 
+ *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */
 @Documented
-@Retention( RetentionPolicy.CLASS )
-@Target( {ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE} )
+@Retention(RetentionPolicy.CLASS)
+@Target({ ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE })
 public @interface ReadOnly {
 
 }

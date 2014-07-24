@@ -1,10 +1,6 @@
 package com.tguzik.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * Communicates the failure mode of annotated class/method.
@@ -13,8 +9,8 @@ import java.lang.annotation.Target;
  * @since 0.1
  */
 @Documented
-@Retention( RetentionPolicy.CLASS )
-@Target( {ElementType.TYPE, ElementType.METHOD} )
+@Retention(RetentionPolicy.CLASS)
+@Target({ ElementType.TYPE, ElementType.METHOD })
 public @interface ExpectedFailureProfile {
     /** How the annotated type/method handles failures? */
     Kind value();
