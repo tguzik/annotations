@@ -34,7 +34,7 @@ public @interface ExpectedFailureProfile {
         /** Completely hides failures */
         IGNORE,
 
-        /** Automatically retries when failue occurs */
+        /** Automatically retries when failure occurs */
         RETRY
     }
 

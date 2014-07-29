@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  * hand to rewrite something to be done right, so one would have to resort to
  * leaving a memo. Yes, in the perfect world that situation shouldn't happen,
  * but in reality happens more than one would like. Especially with old
- * codebases.
+ * code bases.
  * </p>
  *
  * @author Tomasz Guzik <tomek@tguzik.com>
