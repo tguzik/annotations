@@ -31,7 +31,7 @@ The library is available in Maven Central repository. You can use it in your pro
     <dependency>
         <groupId>com.tguzik</groupId>
         <artifactId>annotations</artifactId>
-        <version>0.3</version>
+        <version>0.4</version>
     </dependency>
 
 
