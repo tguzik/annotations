@@ -73,13 +73,16 @@ public @interface ExpectedPerformanceProfile {
         MEMORY_HEAVY,
 
         /** Relies heavily on caching */
-        CACHE_BOUND,
+        CACHE_HEAVY,
 
         /** Relies heavily on reflection mechanisms */
         REFLECTION_HEAVY,
 
-        /** Returns very quickly and does not block */
-        LOW_LATENCY,
+        /** Blocks until operation is completed */
+        SYNCHRONOUS,
+
+        /** Returns before operations is completed */
+        ASYNCHRONOUS,
 
         /**
          * Issues significantly more reads than writes. Both terms should be
