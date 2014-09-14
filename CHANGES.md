@@ -11,6 +11,9 @@ change and/or change the expected functionality.
 
 -----
 
+Version `1.0.0`:
+* *Breaking*: Renamed `@DiscardObjectAfterInvocation` to `@OnlyOnce`
+
 Version `0.4`:
 * *Breaking*: Removed `LOW_LATENCY` and renamed `CAHCE_BOUND` to `CACHE_HEAVY`
   in `@ExpectedPerformanceProfile.Kind`
