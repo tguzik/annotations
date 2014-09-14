@@ -1,9 +1,11 @@
 package com.tguzik.annotations;
 
+import javax.annotation.meta.When;
 import java.lang.annotation.*;
 
+
 /**
- * Indicates that the parameter will be mutated in some way.
+ * Indicates whether whether the target parameter will/will not be modified.
  *
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
@@ -11,6 +13,9 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.CLASS)
 @Target(value = ElementType.PARAMETER)
-public @interface MayModify {
+public @interface Modifies {
+    /** Is target always modified? */
+    When value() default When.ALWAYS;
+
     String comment() default "";
 }

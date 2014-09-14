@@ -13,9 +13,11 @@ change and/or change the expected functionality.
 
 Version `1.0.0`:
 * *Breaking*: Renamed `@DiscardObjectAfterInvocation` to `@OnlyOnce`
+* *Breaking*: Renamed `@MayModify` to `@Modifies`. The latter has optional
+  fields to describe when modification happens.
 
 Version `0.4`:
-* *Breaking*: Removed `LOW_LATENCY` and renamed `CAHCE_BOUND` to `CACHE_HEAVY`
+* *Breaking*: Removed `LOW_LATENCY` and renamed `CACHE_BOUND` to `CACHE_HEAVY`
   in `@ExpectedPerformanceProfile.Kind`
 * Added `SYNCHRONOUS`, `ASYNCHRONOUS`, `READ_HEAVY` and `WRITE_HEAVY` to
   `@ExpectedPerformanceProfile.Kind`
