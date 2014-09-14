@@ -13,11 +13,19 @@ change and/or change the expected functionality.
 
 Version `1.0.0`:
 * *Breaking*: Renamed `@DiscardObjectAfterInvocation` to `@OnlyOnce`
-* *Breaking*: Renamed `@MayModify` to `@Modifies`. The latter has optional
-  fields to describe when modification happens.
+  * Shorter name with stating same intent
+* *Breaking*: Renamed `@MayModify` to `@Modifies`. 
+  * The latter has optional fields to describe when modification happens.
+  * Shorter name with stating same intent
 * *Breaking*:  Renamed `@OwnershipTransferredToTarget` to `@TakesOwnership`
+  * Shorter name with stating same intent
 * *Breaking*: Split `@Reentrancy` into `@Reentrant` and `@NotReentrant`
+  * Original annotation was too verbose (even by Java standards :> ). The new annotations
+    should be more to-the-point.
 * *Breaking*: `@HasSideEffects` can no longer be applied to fields and parameters.
+  * Because what does it mean that a field has side effects? Or what does it mean that a parameter has
+    side effects? If the behaviour changes on whether they are present or not, an appropriate description
+    should be in javadoc not via single annotation.
 * Added `FAST` and `SLOW` to enum in `@ExpectedPerformanceProfile`
 
 
