@@ -98,6 +98,18 @@ public @interface ExpectedPerformanceProfile {
          */
         WRITE_HEAVY,
 
+        /**
+         * Call to this method is expected to take very little time - target uses sub-<code>O(n)</code> operations,
+         * does not pause, does not wait on any other operations and/or does not engage external systems.
+         */
+        FAST,
+
+        /**
+         * Call to this method is expected to take significant amount of time. This might be related to waiting on
+         * external system.
+         */
+        SLOW,
+
         /** Default value. Profile not known - see comment */
         UNKNOWN;
     }

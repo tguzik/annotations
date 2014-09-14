@@ -16,6 +16,7 @@ Version `1.0.0`:
 * *Breaking*: Renamed `@MayModify` to `@Modifies`. The latter has optional
   fields to describe when modification happens.
 * *Breaking*: Split `@Reentrancy` into `@Reentrant` and `@NotReentrant`
+* Added `FAST` and `SLOW` to enum in `@ExpectedPerformanceProfile`
 
 
 Version `0.4`:
