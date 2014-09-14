@@ -11,8 +11,8 @@ import java.lang.annotation.*;
  * @since 0.1
  */
 @Documented
-@Target({ ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.TYPE, ElementType.PARAMETER })
-@Retention(RetentionPolicy.CLASS)
+@Target( { ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.TYPE } )
+@Retention( RetentionPolicy.CLASS )
 public @interface HasSideEffects {
     When value() default When.ALWAYS;
 
