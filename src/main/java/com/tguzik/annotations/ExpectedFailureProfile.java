@@ -15,10 +15,7 @@ public @interface ExpectedFailureProfile {
     /** How the annotated type/method handles failures? */
     Kind value();
 
-    /**
-     * Does the failure corrupt internal state? Can object be reused after
-     * failure?
-     */
+    /** Does the failure corrupt internal state? Can object be reused after failure? */
     Transactional transactional() default Transactional.UNKNOWN;
 
     /** How many times does the type/method retry before giving up? */

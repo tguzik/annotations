@@ -7,7 +7,6 @@ import java.lang.annotation.*;
  * the class.
  *
  * @author Tomasz Guzik <tomek@tguzik.com>
- * @since 0.1
  */
 @Documented
 @Retention(RetentionPolicy.CLASS)
@@ -72,7 +71,7 @@ public @interface ExpectedPerformanceProfile {
         /** Uses significant amount of memory */
         MEMORY_HEAVY,
 
-        /** Relies heavily on caching */
+        /** Relies heavily on caching or introduces significant cache pollution. */
         CACHE_HEAVY,
 
         /** Relies heavily on reflection mechanisms */
@@ -81,18 +80,21 @@ public @interface ExpectedPerformanceProfile {
         /** Blocks until operation is completed */
         SYNCHRONOUS,
 
-        /** Returns before operations is completed */
+        /**
+         * Returns before operation is completed. An example would be queuing operation to be executed by
+         * another thread.
+         */
         ASYNCHRONOUS,
 
         /**
-         * Issues significantly more reads than writes. Both terms should be
-         * either obvious or explained by the programmer.
+         * Issues significantly more reads than writes. The meaning behinds `reads` and `writes` should be either
+         * obvious or explained by the programmer.
          */
         READ_HEAVY,
 
         /**
-         * Issues significantly more writes than writes. Both terms should be
-         * either obvious or explained by the programmer.
+         * Issues significantly more writes than reads. The meaning behinds `reads` and `writes` should be either
+         * obvious or explained by the programmer.
          */
         WRITE_HEAVY,
 
