@@ -5,8 +5,9 @@ import java.lang.annotation.*;
 
 
 /**
- * Indicates whether whether the target parameter will/will not be modified.
+ * Indicates whether whether the target parameter will be modified.
  *
+ * @see com.tguzik.annotations.ReadOnly
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */

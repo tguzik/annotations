@@ -10,6 +10,7 @@ import java.lang.annotation.*;
  * Use with mutable classes and interfaces suggesting mutability. If possible use types/values enforcing immutability
  * instead.
  *
+ * @see com.tguzik.annotations.Modifies
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.1
  */
