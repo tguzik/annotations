@@ -7,6 +7,7 @@ import java.lang.annotation.*;
  * that cannot be easily refactored. An example of such piece of code would be startup or shutdown methods.
  *
  * @author Tomasz Guzik <tomek@tguzik.com>
+ * @since 1.0.0 (under this name)
  */
 @Documented
 @Target( ElementType.METHOD )

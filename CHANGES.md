@@ -23,10 +23,9 @@ Version `1.0.0`:
   * Original annotation was too verbose (even by Java standards :> ). The new annotations
     should be more to-the-point.
 * *Breaking*: `@HasSideEffects` can no longer be applied to fields and parameters.
-  * Because what does it mean that a field has side effects? Or what does it mean that a parameter has
-    side effects? If the behaviour changes on whether they are present or not, an appropriate description
-    should be in javadoc not via single annotation.
-* Added `FAST` and `SLOW` to enum in `@ExpectedPerformanceProfile`
+  * The meaning conveyed by this annotation on fields and parameters was too ambiguous (what does it mean that a field 
+    or parameter has side effects?). Placing an appropriate comment in the JavaDoc would be better and clearer place 
+    to note the side effects or the change in the behaviour.
 
 
 Version `0.4`:

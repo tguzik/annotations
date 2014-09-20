@@ -15,6 +15,7 @@ import java.lang.annotation.*;
  * <li>Attempt to modify its own code</li>
  * </ul>
  *
+ * @see com.tguzik.annotations.NotReentrant
  * @author Tomasz Guzik <tomek@tguzik.com>
  * @since 0.4
  */
