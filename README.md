@@ -31,88 +31,22 @@ The library is available in Maven Central repository. You can use it in your pro
     <dependency>
         <groupId>com.tguzik</groupId>
         <artifactId>annotations</artifactId>
-        <version>0.4</version>
+        <version>1.0.1</version>
     </dependency>
 
 
 ## So what's inside?
 
-All annotations from `com.google.code.findbugs:jsr305` are provided through transitive dependency. These include
-`@Nonnull`, `@Nullable`, `@ThreadSafe`, `@Immutable`, `@CheckReturnValue`, `@Nonnegative` and more.
+You can see the listing in the [generated Javadoc](http://tguzik.github.io/annotations/).
 
-This library on the other hand contains following annotations:
+In addition to that, all annotations from `com.google.code.findbugs:jsr305` are provided through transitive dependency.
+These include `@Nonnull`, `@Nullable`, `@ThreadSafe`, `@Immutable`, `@CheckReturnValue`, `@Nonnegative` and more.
 
-* `@DiscardObjectAfterInvocation` - indicates that the object is no longer (re-)usable after calling annotated method
-* `@ExpectedFailureProfile(FailureMode value, Transactional transactional, int retries)` - indicates whether method
-  fails quickly, carries on or ignores failures.
-* `@ExpectedPerformanceProfile(PerformanceCharacteristic value, String comment)`- indicates whether class/method
-  is CPU/IO/MEMORY/Reflection heavy, whether it relies on cache or returns quickly in all cases. Optional
-  comment can provide some context.
-* `@HasSideEffects(String[] value, When when)`
-* `@MayModify(String comment)` - indicates that the function argument may be mutated in some way. Optional comment
-  provides a way to preserve a note without relying on Javadoc.
-* `@ReadOnly` indicates that the returned value (or value passed as argument) should be treated as read only and should
-  not be modified.
-* `@RefactorThis(String[] value)` - indicates that the current implementation should be reworked. Optional comment
-  provides a way to note what is wrong with current implementation.
-
-
-Details are in [generated Javadoc](http://tguzik.github.io/annotations/).
-
-Please note that the annotations in this library are meant to supplement what is provided by Apache
-Commons Lang, Google Guava and JSR305 libraries without duplicating functionality.
-
-
-## Examples
-Consider these examples of how this library along with `jsr305` can be used:
-
-```java
-public abstract class BaseObject
-{
-    // [...]
-
-    @Nonnull
-    @Override
-    @ExpectedPerformanceProfile( path = Path.COLD, value = Kind.REFLECTION_HEAVY )
-    public String toString( ) {
-        return ReflectionToStringBuilder.toString( this, ToStringStyle.SHORT_PREFIX_STYLE );
-    }
-
-    // [...]
-}
-```
-
-```java
-public class MyCustomDAO
-{
-    @HasSideEffects( value = "Clears contents of internal cache", when = When.ALWAYS )
-    @ExpectedFailureProfile( value = Kind.FAIL_FAST, transactional = Transactional.YES )
-    public void updateHalfOfTheDatabase( ) {
-        // [...]
-    }
-}
-```
-
-```java
-@ThreadSafe
-public class CustomTcpIpConnector
-{
-    @Nullable
-    @ReadOnly
-    @ExpectedFailureProfile( value = Kind.CARRY_ON, retries = 3 )
-    public byte[] sendAndRecieve( @Nonnull @ReadOnly byte[] payload ) throws ConnectException {
-        // [...]
-    }
-}
-```
 
 ## Dependencies
 
 - JDK 1.5+
 - `com.google.code.findbugs:jsr305` - additional annotations like `@Nonnull` or `@Nullable`
-
-Both `org.apache.commons:commons-lang3` and `com.google.guava:guava` are recommended, but are too heavy to be a
-dependency to this library.
 
 
 ## License

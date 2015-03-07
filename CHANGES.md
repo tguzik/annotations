@@ -11,7 +11,13 @@ change and/or change the expected functionality.
 
 -----
 
+Version `1.0.1`:
+
+* Pinned dependency on `com.google.code.findbugs:jsr305` from version selector `[2.0.2,)` to `3.0.0`.
+
+
 Version `1.0.0`:
+
 * *Breaking*: Renamed `@DiscardObjectAfterInvocation` to `@OnlyOnce`
   * Shorter name with stating same intent
 * *Breaking*: Renamed `@MayModify` to `@Modifies`. 
@@ -29,6 +35,7 @@ Version `1.0.0`:
 
 
 Version `0.4`:
+
 * *Breaking*: Removed `LOW_LATENCY` and renamed `CACHE_BOUND` to `CACHE_HEAVY`
   in `@ExpectedPerformanceProfile.Kind`
 * Added `SYNCHRONOUS`, `ASYNCHRONOUS`, `READ_HEAVY` and `WRITE_HEAVY` to
